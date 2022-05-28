@@ -35,7 +35,7 @@ After running the script, run the game, and you should see something like this:
 ![E](https://user-images.githubusercontent.com/71789103/170841239-75156411-c214-41c7-bd36-52f5a443c946.png)
 If you see this, it worked!
 # Running on Heroku
-To deploy to Heroku, use [fuse-heroku](https://github.com/Unzor/fuse-herpku), or click below:
+To deploy to Heroku, use [fuse-heroku](https://github.com/Unzor/fuse-heroku), or click below:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Unzor/fuse-heroku/tree/main)
 
