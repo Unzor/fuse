@@ -4,9 +4,9 @@ const fs = require("fs");
 const app = express();
 app.use(express.static(__dirname));
 
-function ABLT_FN(fn){
+function FUSE_FN(fn){
 	var fne;
-	app.get("/ablt/run/" + fn.name, async (req, res) => {
+	app.get("/fuse/run/" + fn.name, async (req, res) => {
 		if (req.query.args) {
 			var args = atob(req.query.args).split(",");
       if (fn.constructor.name == "AsyncFunction") {
@@ -30,7 +30,7 @@ if (fs.existsSync("preload.json")) {
     eval(fs.readFileSync(file).toString())
   })
 }
-app.get('/ablt/attach/:code', (req, res) => {
+app.get('/fuse/attach/:code', (req, res) => {
   eval(atob(req.params.code))
   res.send("attached")
 });
