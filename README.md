@@ -6,7 +6,7 @@ preload.json:
 ```json
 {
 	"files": [
-		"second.js"
+		"test.js"
 	]
 }
 ```
