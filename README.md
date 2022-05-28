@@ -10,7 +10,7 @@ preload.json:
 	]
 }
 ```
-second.js:
+test.js:
 ```js
 function test(a1) {
 	return "Hello, " + a1 + "!" 
