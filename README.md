@@ -1,6 +1,8 @@
 # fuse
 A Roblox tool that allows you to export Node.js functions to a game.
 
+Do not use in production unless hosted on a cloud server.
+
 # Usage
 preload.json:
 ```json
