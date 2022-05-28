@@ -18,7 +18,7 @@ function test(a1) {
 FUSE_FN(test)
 ```
 
-Script:
+Script (check /rblx for Fuse code):
 ```lua
 local fuse = require(game.ServerScriptService.Fuse)
 
