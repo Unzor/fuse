@@ -31,3 +31,6 @@ Now, run:
 ```
 npm i -g rblx-fuse && npx fuse -u preload.json
 ```
+After running the script, run the game, and you should see something like this:
+![E](https://user-images.githubusercontent.com/71789103/170841239-75156411-c214-41c7-bd36-52f5a443c946.png)
+If you see this, it worked!
