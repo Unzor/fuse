@@ -38,6 +38,7 @@ If you see this, it worked!
 To deploy to Heroku, use [fuse-heroku](https://github.com/Unzor/fuse-herpku), or click below:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Unzor/fuse-heroku/tree/main)
+
 Once deployed, use this code, and replace "my-app-name" with your Heroku app name:
 ```lua
 local fuse = require(game.ServerScriptService.Fuse)
