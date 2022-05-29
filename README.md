@@ -31,7 +31,7 @@ print(result)
 ```
 Now, run:
 ```
-npm i -g rblx-fuse && npx fuse -u preload.json
+npm i -g rblx-fuse && fuse -u preload.json
 ```
 (you can also use --use before your preload file)
 After running the script, run the game, and you should see something like this:
