@@ -1,7 +1,7 @@
 # fuse
 A Roblox tool that allows you to export Node.js functions to a game.
 
-Do not use in production unless hosted on a cloud server.
+Do not use in production unless hosted on a cloud server, like Heroku.
 
 # Usage
 preload.json:
@@ -59,4 +59,6 @@ local result = host.hello("world")
 print(result)
 ```
 # Asynchronous functions
-Asynchronous functions are in fact, possible. Just add "async" before your function or return a promise, and it will give the same result!
+Asynchronous functions are in fact, possible. 
+
+Just add "async" before your function or return a promise, and it will give the same result.
