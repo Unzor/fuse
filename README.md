@@ -49,3 +49,12 @@ local result = host.test("world")
 
 print(result)
 ```
+If you want, you can also try running an already-running demo of this ([repo](https://github.com/unisocket3/fuse-heroku-test)):
+```lua
+local fuse = require(game.ServerScriptService.Fuse)
+
+local host = fuse.connect('fuse-rblx-demo.herokuapp.com')
+local result = host.hello("world")
+
+print(result)
+```
