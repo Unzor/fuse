@@ -32,17 +32,9 @@ function FUSE_FN(fn) {
     app.get("/fuse/run/" + fn.name, async (req, res) => {
         if (req.query.args) {
             var args = atob(req.query.args).split(",");
-            if (fn.constructor.name == "AsyncFunction") {
-                res.send(await fn(...args))
-            } else {
-                res.send(fn(...args))
-            }
+            res.send(await fn(...args))
         } else {
-            if (fn.constructor.name == "AsyncFunction") {
-                res.send(await fn(...args))
-            } else {
-                res.send(fn(...args))
-            }
+            res.send(await fn())
         }
     })
 }
