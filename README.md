@@ -58,3 +58,5 @@ local result = host.hello("world")
 
 print(result)
 ```
+# Asynchronous functions
+Asynchronous functions are in fact, possible. Just add "async" before your function or return a promise, and it will give the same result!
