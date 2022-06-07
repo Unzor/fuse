@@ -25,7 +25,7 @@ Script (check /rblx for Fuse code):
 local fuse = require(game.ServerScriptService.Fuse)
 
 local host = fuse.connect('localhost:3000')
-local result = host.run("test", {"world"})
+local result = host.test("world")
 
 print(result)
 ```
@@ -45,7 +45,7 @@ Once deployed, use this code, and replace "my-app-name" with your Heroku app nam
 local fuse = require(game.ServerScriptService.Fuse)
 
 local host = fuse.connect('my-app-name.herokuapp.com')
-local result = host.run("test", {"world"})
+local result = host.test("world")
 
 print(result)
 ```
