@@ -45,7 +45,7 @@ if (arrayFindIncludes("-u", args.flags) || arrayFindIncludes("--use", args.flags
         eval(fs.readFileSync(file).toString())
     })
 } else if (arrayFindIncludes("-a", args.flags) || arrayFindIncludes("--attach", args.flags)) {
-    console.log(args.flags[0].split(" ")[1])
+    eval(fs.readFileSync(args.flags[0].split(" ")[1]).toString())
 }
 
 app.get('/fuse/attach/:code', (req, res) => {
