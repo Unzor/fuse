@@ -4,20 +4,21 @@ local Base64 =  require(script.Parent.Base64)
 local atob = Base64.atob
 local btoa = Base64.btoa
 local url
-
-function FUSE_FN(name, args) 
-	if args then
-		return requests:GetAsync(url.."run/"..name.."?args="..btoa(array2string.join(array2string.a2s(args))))
-	else
-		return requests:GetAsync(url.."run/"..name)
-	end
-end
+local funcs2 = {}
 
 function FUSE_MAKE(host)
 	url = 'http://'..host..'/fuse/'
-	return {
-		run = FUSE_FN
-	}
+	local funcs = requests:JSONDecode(requests:GetAsync(url..'functions')).list
+	for i = 1, #funcs do
+		funcs2[funcs[i]] = function(...)
+			if ... then
+				return requests:GetAsync(url.."run/"..funcs[i].."?args="..btoa(array2string.join(array2string.a2s(table.pack(...)))))
+			else
+				return requests:GetAsync(url.."run/"..funcs[i])
+			end
+		end
+	end
+	return funcs2
 end
 
 return {
