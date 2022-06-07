@@ -8,6 +8,8 @@ var args = parser.parse(process.argv.slice(2).join(" "), {
 })
 const app = express();
 app.use(express.static(__dirname));
+var funcs = [];
+
 
 function arrayFindIncludes(r, n) {
     var u;
@@ -23,7 +25,9 @@ function arrayFindIncludes(r, n) {
     return u
 }
 
+
 function FUSE_FN(fn) {
+    funcs.push(fn.name);
     var fne;
     app.get("/fuse/run/" + fn.name, async (req, res) => {
         if (req.query.args) {
@@ -50,13 +54,19 @@ if (arrayFindIncludes("-u", args.flags) || arrayFindIncludes("--use", args.flags
     })
 } else if (arrayFindIncludes("-a", args.flags) || arrayFindIncludes("--attach", args.flags)) {
     console.log(args.flags[0].split(" ")[1])
-    eval(fs.readFileSync(args.flags[0].split(" ")[1]).toString())
 }
 
 app.get('/fuse/attach/:code', (req, res) => {
     eval(atob(req.params.code))
     res.send("attached")
 });
+
+app.get('/fuse/functions', (req, res) => {
+    res.send({
+        list: funcs
+    });
+});
+
 
 app.listen(3000, () => {
     console.log('Fuse server started')
